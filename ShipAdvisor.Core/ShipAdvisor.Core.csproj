@@ -5,10 +5,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="ApplicationService" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\ShipAdvisor.Core.Entity\ShipAdvisor.Core.Entity.csproj" />
     </ItemGroup>
 
