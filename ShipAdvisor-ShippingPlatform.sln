@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipAdvisor-Api", "ShipAdvisor-Api\ShipAdvisor-Api.csproj", "{0EFA926F-3094-479F-B76B-0272C5B84B86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{0F70D52F-11A2-418A-ABBA-DE50B6AB450E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{AA99D590-59CE-4752-B714-79837EF9310A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{F212F01F-7092-4636-B91D-14CDF501AB42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipAdvisor.Core", "ShipAdvisor.Core\ShipAdvisor.Core.csproj", "{8D4B2195-CB92-40B1-9810-82FB047E0DBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipAdvisor.Core.Entity", "ShipAdvisor.Core.Entity\ShipAdvisor.Core.Entity.csproj", "{8F290C58-DAA9-4A0C-A918-D4E3966D6B7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipAdvisor.Infrastructure.Data", "ShipAdvisor.Infrastructure.Data\ShipAdvisor.Infrastructure.Data.csproj", "{69EFC11F-0EF9-42DF-943B-015563CECEB7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EFA926F-3094-479F-B76B-0272C5B84B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EFA926F-3094-479F-B76B-0272C5B84B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EFA926F-3094-479F-B76B-0272C5B84B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EFA926F-3094-479F-B76B-0272C5B84B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D4B2195-CB92-40B1-9810-82FB047E0DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D4B2195-CB92-40B1-9810-82FB047E0DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D4B2195-CB92-40B1-9810-82FB047E0DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D4B2195-CB92-40B1-9810-82FB047E0DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F290C58-DAA9-4A0C-A918-D4E3966D6B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F290C58-DAA9-4A0C-A918-D4E3966D6B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F290C58-DAA9-4A0C-A918-D4E3966D6B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F290C58-DAA9-4A0C-A918-D4E3966D6B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69EFC11F-0EF9-42DF-943B-015563CECEB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69EFC11F-0EF9-42DF-943B-015563CECEB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69EFC11F-0EF9-42DF-943B-015563CECEB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69EFC11F-0EF9-42DF-943B-015563CECEB7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0EFA926F-3094-479F-B76B-0272C5B84B86} = {F212F01F-7092-4636-B91D-14CDF501AB42}
+		{8D4B2195-CB92-40B1-9810-82FB047E0DBA} = {0F70D52F-11A2-418A-ABBA-DE50B6AB450E}
+		{8F290C58-DAA9-4A0C-A918-D4E3966D6B7E} = {0F70D52F-11A2-418A-ABBA-DE50B6AB450E}
+		{69EFC11F-0EF9-42DF-943B-015563CECEB7} = {AA99D590-59CE-4752-B714-79837EF9310A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="ApplicationService" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ShipAdvisor.Core.Entity\ShipAdvisor.Core.Entity.csproj" />
+    </ItemGroup>
+
+</Project>
