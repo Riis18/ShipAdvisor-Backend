@@ -14,6 +14,8 @@ namespace ShipAdvisor.Infrastructure.Data.Repositories
         public Customer ReadById(int id)
         {
             throw new System.NotImplementedException();
+            
+            
         }
 
         public List<Customer> GetAllCustomers()
