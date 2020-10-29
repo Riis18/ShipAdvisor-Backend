@@ -22,9 +22,9 @@ namespace ShipAdvisor_Api.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Customer> Get()
+        public ActionResult<IEnumerable<Customer>> Get()
         {
-            return _customerService.GetAllCustomers();
+            return Ok(_customerService.GetAllCustomers());
         }
     }
 }
