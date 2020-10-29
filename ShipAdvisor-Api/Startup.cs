@@ -10,6 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ShipAdvisor.Core.ApplicationService;
+using ShipAdvisor.Core.ApplicationService.Impl;
+using ShipAdvisor.Core.DomainService;
+using ShipAdvisor.Infrastructure.Data.Repositories;
 
 namespace ShipAdvisor_Api
 {
@@ -26,6 +30,9 @@ namespace ShipAdvisor_Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +46,8 @@ namespace ShipAdvisor_Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            
+            app.UseCors(builder => builder.AllowAnyOrigin());
 
             app.UseAuthorization();
 

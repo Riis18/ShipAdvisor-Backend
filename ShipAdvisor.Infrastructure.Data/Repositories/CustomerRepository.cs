@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using ShipAdvisor.Core.DomainService;
 using ShipAdvisor.Core.Entity;
 
@@ -15,12 +17,19 @@ namespace ShipAdvisor.Infrastructure.Data.Repositories
         {
             throw new System.NotImplementedException();
             
-            
         }
 
-        public List<Customer> GetAllCustomers()
+        public IEnumerable<Customer> GetAllCustomers()
         {
-            throw new System.NotImplementedException();
+            var customer1 = new Customer();
+            var test = new List<Customer>();
+            customer1.id = 1;
+            customer1.FirstName = "Jesper";
+            customer1.LastName = "Riis";
+            customer1.Email = "Riisjesper@hotmail.com";
+            customer1.password = "wuptidupti";
+            test.Add(customer1);
+            return test;
         }
 
         public Customer Update(Customer customer)

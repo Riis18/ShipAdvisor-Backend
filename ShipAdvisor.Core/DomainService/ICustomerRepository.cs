@@ -12,7 +12,7 @@ namespace ShipAdvisor.Core.DomainService
         Customer ReadById(int id);
 
         //Get list of all customers
-        List<Customer> GetAllCustomers();
+        IEnumerable<Customer> GetAllCustomers();
 
         //Update customer
         Customer Update(Customer customer);

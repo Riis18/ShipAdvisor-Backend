@@ -5,5 +5,11 @@
         <RootNamespace>ShipAdvisor_Api</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ShipAdvisor.Core.Entity\ShipAdvisor.Core.Entity.csproj" />
+      <ProjectReference Include="..\ShipAdvisor.Core\ShipAdvisor.Core.csproj" />
+      <ProjectReference Include="..\ShipAdvisor.Infrastructure.Data\ShipAdvisor.Infrastructure.Data.csproj" />
+    </ItemGroup>
+
 
 </Project>
