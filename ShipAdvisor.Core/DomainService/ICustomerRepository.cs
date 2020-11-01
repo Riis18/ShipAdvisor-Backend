@@ -8,16 +8,8 @@ namespace ShipAdvisor.Core.DomainService
         //Create Customer Data
         Customer Create(Customer customer);
 
-        //Read customer by id
-        Customer ReadById(int id);
-
         //Get list of all customers
         IEnumerable<Customer> GetAllCustomers();
-
-        //Update customer
-        Customer Update(Customer customer);
-
-        //Delete a customer by id
-        Customer Delete(int id);
+        
     }
 }

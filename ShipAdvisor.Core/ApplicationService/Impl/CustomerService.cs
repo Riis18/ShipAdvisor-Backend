@@ -18,5 +18,10 @@ namespace ShipAdvisor.Core.ApplicationService.Impl
         {
             return _customerRepo.GetAllCustomers().ToList();
         }
+
+        public Customer CreateCustomer(Customer customer)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

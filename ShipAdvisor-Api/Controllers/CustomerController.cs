@@ -26,5 +26,11 @@ namespace ShipAdvisor_Api.Controllers
         {
             return Ok(_customerService.GetAllCustomers());
         }
+
+        [HttpPost]
+        public ActionResult<Customer> Post([FromBody] Customer customer)
+        {
+            return Ok(_customerService.CreateCustomer(customer));
+        }
     }
 }

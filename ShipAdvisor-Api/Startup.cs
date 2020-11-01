@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.Logging;
 using ShipAdvisor.Core.ApplicationService;
 using ShipAdvisor.Core.ApplicationService.Impl;
 using ShipAdvisor.Core.DomainService;
+using ShipAdvisor.Infrastructure.Data;
 using ShipAdvisor.Infrastructure.Data.Repositories;
 
 namespace ShipAdvisor_Api
@@ -31,6 +33,9 @@ namespace ShipAdvisor_Api
         {
             services.AddControllers();
 
+            services.AddDbContext<ShipadvisorContext>(
+                opt => opt.UseSqlite("Data Source=shipAdvisor.db"));
+
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
         }
@@ -41,6 +46,12 @@ namespace ShipAdvisor_Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                using (var scope = app.ApplicationServices.CreateScope())
+                {
+                    var ctx = scope.ServiceProvider.GetService<ShipadvisorContext>();
+                    DBInitializer.SeedDb(ctx);
+                }
             }
 
             app.UseHttpsRedirection();
