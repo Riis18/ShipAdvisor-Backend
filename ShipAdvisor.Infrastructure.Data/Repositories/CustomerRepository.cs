@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using ShipAdvisor.Core.DomainService;
 using ShipAdvisor.Core.Entity;
 
@@ -14,14 +15,18 @@ namespace ShipAdvisor.Infrastructure.Data.Repositories
         {
             _ctx = ctx;
         }
-        public Customer Create(Customer customer)
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
         public IEnumerable<Customer> GetAllCustomers()
         {
             return _ctx.Customers;
+        }
+
+        public Customer CreateCustomer(Customer customer)
+        {
+            var customerSaved = _ctx.Customers.Add(customer).Entity;
+            _ctx.SaveChanges();
+            return customerSaved;
         }
         
     }
