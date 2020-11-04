@@ -11,6 +11,7 @@ namespace ShipAdvisor.Infrastructure.Data
             
             var customer1 = ctx.Customers.Add(new Customer()
             {
+                UId = "IjbfpNeV2CakIphFiLdTMhBoQJb2",
                 FirstName = "Jesper",
                 LastName = "Riis",
                 Email = "Riisjesper@hotmail.com",
