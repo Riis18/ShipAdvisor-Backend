@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using ShipAdvisor.Core.DomainService;
 using ShipAdvisor.Core.Entity;
 
@@ -8,38 +9,25 @@ namespace ShipAdvisor.Infrastructure.Data.Repositories
 {
     public class CustomerRepository: ICustomerRepository
     {
-        public Customer Create(Customer customer)
-        {
-            throw new System.NotImplementedException();
-        }
+        private readonly ShipadvisorContext _ctx;
 
-        public Customer ReadById(int id)
+        public CustomerRepository(ShipadvisorContext ctx)
         {
-            throw new System.NotImplementedException();
-            
+            _ctx = ctx;
         }
+        
 
         public IEnumerable<Customer> GetAllCustomers()
         {
-            var customer1 = new Customer();
-            var test = new List<Customer>();
-            customer1.id = 1;
-            customer1.FirstName = "Jesper";
-            customer1.LastName = "Riis";
-            customer1.Email = "Riisjesper@hotmail.com";
-            customer1.password = "wuptidupti";
-            test.Add(customer1);
-            return test;
+            return _ctx.Customers;
         }
 
-        public Customer Update(Customer customer)
+        public Customer CreateCustomer(Customer customer)
         {
-            throw new System.NotImplementedException();
+            var customerSaved = _ctx.Customers.Add(customer).Entity;
+            _ctx.SaveChanges();
+            return customerSaved;
         }
-
-        public Customer Delete(int id)
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }
