@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,20 +11,27 @@ namespace ShipAdvisor_Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class CustomerController : ControllerBase
+    public class LoginController : ControllerBase
     {
 
         private readonly ICustomerService _customerService;
 
-        public CustomerController(ICustomerService customerService)
+        public LoginController(ICustomerService customerService)
         {
             _customerService = customerService;
         }
 
-        [HttpGet]
-        public ActionResult<IEnumerable<Customer>> Get()
+        [HttpPost("addcustomer")]
+        public ActionResult CreateCustomer([FromBody] Customer customer)
         {
-            return Ok(_customerService.GetAllCustomers());
+            try
+            {
+                return Ok(_customerService.CreateCustomer(customer));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
     }
 }

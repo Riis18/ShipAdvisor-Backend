@@ -58,7 +58,7 @@ namespace ShipAdvisor_Api
 
             app.UseRouting();
             
-            app.UseCors(builder => builder.AllowAnyOrigin());
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader());
 
             app.UseAuthorization();
 
