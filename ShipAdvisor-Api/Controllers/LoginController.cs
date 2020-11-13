@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using ShipAdvisor.Core.ApplicationService;
 using ShipAdvisor.Core.Entity;
+using ShipAdvisor_Api.Dtos;
 
 namespace ShipAdvisor_Api.Controllers
 {
@@ -21,12 +25,16 @@ namespace ShipAdvisor_Api.Controllers
             _customerService = customerService;
         }
 
-        [HttpPost("addcustomer")]
-        public ActionResult CreateCustomer([FromBody] Customer customer)
+        [HttpPost("createCustomer")]
+        public async Task<ActionResult> CreateCustomer([FromBody] CustomerDto customerData)
         {
             try
             {
-                return Ok(_customerService.CreateCustomer(customer));
+                var password = customerData.Password;
+                Customer customer = customerData.Customer;
+                
+                await _customerService.CreateCustomer(customer, password);
+                return Ok();
             }
             catch (Exception e)
             {

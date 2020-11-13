@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using ShipAdvisor.Core.DomainService;
 using ShipAdvisor.Core.Entity;
 
@@ -19,9 +20,9 @@ namespace ShipAdvisor.Core.ApplicationService.Impl
             return _customerRepo.GetAllCustomers().ToList();
         }
 
-        public Customer CreateCustomer(Customer customer)
+        public Task CreateCustomer(Customer customer, string password)
         {
-            return _customerRepo.CreateCustomer(customer);
+             return _customerRepo.CreateCustomer(customer, password);
         }
     }
 }

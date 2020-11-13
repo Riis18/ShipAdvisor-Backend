@@ -14,9 +14,9 @@ namespace ShipAdvisor.Core.Entity
 
         public string Email { get; set; }
         
-        public string StreetName { get; set; }
+        public string Address { get; set; }
         
-        public string ApartmentNumber { get; set; }
+        public string Address2 { get; set; }
         
         public string City { get; set; }
         

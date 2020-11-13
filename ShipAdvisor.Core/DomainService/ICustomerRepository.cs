@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using ShipAdvisor.Core.Entity;
 
 namespace ShipAdvisor.Core.DomainService
@@ -8,6 +9,6 @@ namespace ShipAdvisor.Core.DomainService
         //Get list of all customers
         IEnumerable<Customer> GetAllCustomers();
 
-        Customer CreateCustomer(Customer customer);
+        Task CreateCustomer(Customer customer, string password);
     }
 }

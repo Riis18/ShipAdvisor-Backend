@@ -14,10 +14,10 @@ namespace ShipAdvisor.Infrastructure.Data
                 UId = "IjbfpNeV2CakIphFiLdTMhBoQJb2",
                 FirstName = "Jesper",
                 LastName = "Riis",
-                Email = "Riisjesper@hotmail.com",
+                Email = "testcustomer@hotmail.com",
                 PhoneNumber = "27282728",
-                StreetName = "BingoStreet 21",
-                ApartmentNumber = "2. sal",
+                Address = "BingoStreet 21",
+                Address2 = "2. sal",
                 City = "Esbjerg",
                 Country = "Denmark",
                 ZipCode = 6700,
@@ -27,13 +27,41 @@ namespace ShipAdvisor.Infrastructure.Data
             {
                 FirstName = "Tina",
                 LastName = "Jønson",
-                Email = "JønsonTina@hotmail.com",
+                Email = "testcustomer2@hotmail.com",
                 PhoneNumber = "58468431",
-                StreetName = "BingoStreet 21",
-                ApartmentNumber = "2. sal",
+                Address = "BingoStreet 21",
+                Address2 = "2. sal",
                 City = "Esbjerg",
                 Country = "Denmark",
                 ZipCode = 6700,
+            }).Entity;
+
+            var company1 = ctx.Companies.Add(new Company()
+            {
+                uId = "",
+                CompanyName = "Test Company",
+                CompanyAddress = "Test Address 123",
+                CompanyAddress2 = "2.sal",
+                CompanyCity = "Esbjerg",
+                CompanyCountry = "Denmark",
+                CompanyEmail = "testcompany@hotmail.com",
+                CompanyZipCode = 6715,
+                CvrNumber = "564846546132",
+                Phone = "85486486"
+            }).Entity;
+            
+            var company2 = ctx.Companies.Add(new Company()
+            {
+                uId = "",
+                CompanyName = "ShipAdvisor",
+                CompanyAddress = "Vesterhavsgade 55",
+                CompanyAddress2 = "1.sal",
+                CompanyCity = "Esbjerg",
+                CompanyCountry = "Denmark",
+                CompanyEmail = "testcompany2@hotmail.com",
+                CompanyZipCode = 6715,
+                CvrNumber = "894621782",
+                Phone = "98451322"
             }).Entity;
 
             ctx.SaveChanges();

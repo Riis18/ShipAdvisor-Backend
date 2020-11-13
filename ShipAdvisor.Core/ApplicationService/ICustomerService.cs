@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using ShipAdvisor.Core.Entity;
 
 namespace ShipAdvisor.Core.ApplicationService
@@ -7,6 +8,6 @@ namespace ShipAdvisor.Core.ApplicationService
     {
         List<Customer> GetAllCustomers();
         
-        Customer CreateCustomer(Customer customer);
+        Task CreateCustomer(Customer customer, string password);
     }
 }
