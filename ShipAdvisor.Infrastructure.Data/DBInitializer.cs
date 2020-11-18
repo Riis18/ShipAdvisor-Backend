@@ -9,31 +9,34 @@ namespace ShipAdvisor.Infrastructure.Data
             ctx.Database.EnsureDeleted();
             ctx.Database.EnsureCreated();
             
+            
             var customer1 = ctx.Customers.Add(new Customer()
             {
                 UId = "IjbfpNeV2CakIphFiLdTMhBoQJb2",
                 FirstName = "Jesper",
                 LastName = "Riis",
-                Email = "Riisjesper@hotmail.com",
+                Email = "testcustomer@hotmail.com",
                 PhoneNumber = "27282728",
-                StreetName = "BingoStreet 21",
-                ApartmentNumber = "2. sal",
+                Address1 = "BingoStreet 21",
+                Address2 = "2. sal",
                 City = "Esbjerg",
                 Country = "Denmark",
                 ZipCode = 6700,
+                Role = "Customer"
             }).Entity;
             
-            var customer2 = ctx.Customers.Add(new Customer()
+            var companyCustomer = ctx.Customers.Add(new Customer()
             {
-                FirstName = "Tina",
-                LastName = "Jønson",
-                Email = "JønsonTina@hotmail.com",
+                UId = "Evqtbyo4PnbwuFpi4bgYyi0hDxK2",
+                CompanyName = "Shipping Firma :)",
+                Email = "testcompany@hotmail.com",
                 PhoneNumber = "58468431",
-                StreetName = "BingoStreet 21",
-                ApartmentNumber = "2. sal",
+                Address1 = "BingoStreet 21",
+                Address2 = "2. sal",
                 City = "Esbjerg",
                 Country = "Denmark",
                 ZipCode = 6700,
+                Role = "CompanyCustomer"
             }).Entity;
 
             ctx.SaveChanges();
