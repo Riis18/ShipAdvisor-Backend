@@ -5,6 +5,10 @@ namespace ShipAdvisor.Core.Entity
         public int Id { get; set; }
         
         public string UId { get; set; }
+
+        public string Role { get; set; }
+        
+        public string CompanyName { get; set; }
         
         public string FirstName { get; set; }
 
@@ -14,7 +18,7 @@ namespace ShipAdvisor.Core.Entity
 
         public string Email { get; set; }
         
-        public string Address { get; set; }
+        public string Address1 { get; set; }
         
         public string Address2 { get; set; }
         
@@ -23,5 +27,6 @@ namespace ShipAdvisor.Core.Entity
         public int ZipCode { get; set; }
         
         public string Country { get; set; }
+        
     }
 }

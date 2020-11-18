@@ -9,5 +9,7 @@ namespace ShipAdvisor.Core.ApplicationService
         List<Customer> GetAllCustomers();
         
         Task CreateCustomer(Customer customer, string password);
+
+        Customer GetCustomerByUid(string id);
     }
 }

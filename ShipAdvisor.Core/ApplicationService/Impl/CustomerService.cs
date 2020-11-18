@@ -24,5 +24,10 @@ namespace ShipAdvisor.Core.ApplicationService.Impl
         {
              return _customerRepo.CreateCustomer(customer, password);
         }
+
+        public Customer GetCustomerByUid(string id)
+        {
+            return _customerRepo.ReadCustomerByUid(id);
+        }
     }
 }

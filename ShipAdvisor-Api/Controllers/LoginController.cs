@@ -19,14 +19,17 @@ namespace ShipAdvisor_Api.Controllers
     {
 
         private readonly ICustomerService _customerService;
+        private readonly ILoginService _loginService;
 
-        public LoginController(ICustomerService customerService)
+        public LoginController(ICustomerService customerService,
+            ILoginService loginService)
         {
             _customerService = customerService;
+            _loginService = loginService;
         }
 
         [HttpPost("createCustomer")]
-        public async Task<ActionResult> CreateCustomer([FromBody] CustomerDto customerData)
+        public async Task<ActionResult> CreateCustomer([FromBody] UserDto customerData)
         {
             try
             {
@@ -41,5 +44,22 @@ namespace ShipAdvisor_Api.Controllers
                 return BadRequest(e.Message);
             }
         }
+        
+        [HttpGet("{id}")]
+        public ActionResult<Customer> GetUserSignedIn(string id)
+        {
+            try
+            {
+                var userDto = _customerService.GetCustomerByUid(id);
+                return userDto;
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
+            ;
+        }
+        
     }
 }

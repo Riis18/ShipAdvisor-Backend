@@ -10,10 +10,9 @@ namespace ShipAdvisor.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            
         }
 
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<Company> Companies { get; set; }
     }
 }

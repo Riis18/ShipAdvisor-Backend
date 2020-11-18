@@ -2,10 +2,10 @@ using ShipAdvisor.Core.Entity;
 
 namespace ShipAdvisor_Api.Dtos
 {
-    public class CustomerDto
+    public class UserDto
     {
         public Customer Customer { get; set; }
-        
+
         public string Password { get; set; }
     }
 }

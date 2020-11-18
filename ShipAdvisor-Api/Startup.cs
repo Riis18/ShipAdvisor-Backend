@@ -43,8 +43,7 @@ namespace ShipAdvisor_Api
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
 
-            services.AddScoped<ICompanyService, CompanyService>();
-            services.AddScoped<ICompanyRepository, CompanyRepository>();
+            services.AddScoped<ILoginService, LoginService>();
             
             FirebaseApp.Create(new AppOptions()
             {

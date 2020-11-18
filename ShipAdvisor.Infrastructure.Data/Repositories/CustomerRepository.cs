@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,11 +26,17 @@ namespace ShipAdvisor.Infrastructure.Data.Repositories
         {
             return _ctx.Customers;
         }
+        
+        public Customer ReadCustomerByUid(string id)
+        {
+            return _ctx.Customers.FirstOrDefault(c => c.UId == id);
+        }
 
         public async Task CreateCustomer(Customer customer, string password)
         { 
             var userRecord = await _firebase.CreateFirebaseUser(customer.Email, password);
             customer.UId = userRecord.Uid;
+            customer.Role = "Customer";
             var customerSaved = _ctx.Customers.Add(customer).Entity;
             _ctx.SaveChanges();
         }
