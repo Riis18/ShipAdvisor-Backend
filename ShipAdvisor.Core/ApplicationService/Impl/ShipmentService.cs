@@ -13,9 +13,9 @@ namespace ShipAdvisor.Core.ApplicationService.Impl
         {
             _shipmentRepository = shipmentRepository;
         }
-        public ShipmentOrder CreateOrder(ShipmentOrder order, List<PackageList> packageLists)
+        public ShipmentOrder CreateOrder(ShipmentOrder order)
         {
-            return _shipmentRepository.CreateOrder(order, packageLists);
+            return _shipmentRepository.CreateOrder(order);
         }
 
         public List<ShipmentOrder> GetAllCustomersOrder(string id)

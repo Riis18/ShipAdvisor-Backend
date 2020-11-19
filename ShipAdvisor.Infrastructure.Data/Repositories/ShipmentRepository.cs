@@ -15,17 +15,12 @@ namespace ShipAdvisor.Infrastructure.Data.Repositories
         {
             _ctx = ctx;
         }
-        public ShipmentOrder CreateOrder(ShipmentOrder order, List<PackageList> packageLists)
+        public ShipmentOrder CreateOrder(ShipmentOrder order)
         {
             order.OrderCreated = DateTime.Now;
             order.OrderStatus = "Open";
             order.BiddingStatus = "Open";
-            order.PackageLists = packageLists;
             _ctx.ShipmentOrders.Attach(order).State = EntityState.Added;
-            /*foreach (var package in packageLists)
-            {
-                _ctx.Entry(package).State = EntityState.Added;
-            }*/
 
             _ctx.SaveChanges();
 
@@ -36,7 +31,8 @@ namespace ShipAdvisor.Infrastructure.Data.Repositories
         {
             return _ctx.ShipmentOrders
                 .Include(p => p.PackageLists)
-                .Where(s => s.Customers.All(c => c.UId == id));
+                .Where(s => s.Customers.Any(c => c.UId == id))
+                .OrderByDescending(s => s.OrderCreated);
         }
     }
 }

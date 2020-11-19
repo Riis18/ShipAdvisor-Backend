@@ -25,8 +25,7 @@ namespace ShipAdvisor_Api.Controllers
             try
             {
                 ShipmentOrder order = orderDto.ShipmentOrder;
-                List<PackageList> packageLists = orderDto.PackageLists;
-                var shipment = _shipmentService.CreateOrder(order, packageLists);
+                var shipment = _shipmentService.CreateOrder(order);
 
                 return shipment;
 

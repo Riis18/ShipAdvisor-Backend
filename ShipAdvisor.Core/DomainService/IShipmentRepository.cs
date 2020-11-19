@@ -5,7 +5,7 @@ namespace ShipAdvisor.Core.DomainService
 {
     public interface IShipmentRepository
     {
-        ShipmentOrder CreateOrder(ShipmentOrder order, List<PackageList> packageLists);
+        ShipmentOrder CreateOrder(ShipmentOrder order);
         IEnumerable<ShipmentOrder> GetAllCustomersOrder(string id);
     }
 }

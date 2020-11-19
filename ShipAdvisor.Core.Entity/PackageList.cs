@@ -10,6 +10,5 @@ namespace ShipAdvisor.Core.Entity
         
         public int Quantity { get; set; }
         
-        public ShipmentOrder ShipmentOrder { get; set; }
     }
 }

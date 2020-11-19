@@ -20,6 +20,8 @@ namespace ShipAdvisor.Core.Entity
         
         public string ShipmentType { get; set; }
         
+        public string ShipmentSize { get; set; }
+        
         public int Quantity { get; set; }
         
         public string PickUpAddress { get; set; } 
