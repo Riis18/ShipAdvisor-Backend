@@ -20,11 +20,12 @@ namespace ShipAdvisor_Api.Controllers
         
         
         [HttpPost("createShipment")]
-        public ActionResult<ShipmentOrder> CreateOrder([FromBody] ShipmentOrderDto orderDto)
+        public ActionResult<ShipmentOrder> CreateOrder([FromBody] ShipmentOrder orderDto)
         {
             try
             {
-                ShipmentOrder order = orderDto.ShipmentOrder;
+                ShipmentOrder order = orderDto;
+                Console.WriteLine(order.Customers);
                 var shipment = _shipmentService.CreateOrder(order);
 
                 return shipment;
