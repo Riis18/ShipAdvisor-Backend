@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ShipAdvisor.Core.Entity
 {
     public class Customer
@@ -5,6 +7,8 @@ namespace ShipAdvisor.Core.Entity
         public int Id { get; set; }
         
         public string UId { get; set; }
+        
+        public List<ShipmentOrder> ShipmentOrders { get; set; }
 
         public string Role { get; set; }
         

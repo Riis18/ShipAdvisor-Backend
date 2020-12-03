@@ -26,5 +26,6 @@ namespace ShipAdvisor_Api.Controllers
         {
             return Ok(_customerService.GetAllCustomers());
         }
+        
     }
 }
