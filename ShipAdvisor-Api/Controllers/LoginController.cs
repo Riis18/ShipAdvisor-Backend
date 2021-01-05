@@ -57,8 +57,6 @@ namespace ShipAdvisor_Api.Controllers
             {
                 return BadRequest(e.Message);
             }
-
-            ;
         }
         
     }

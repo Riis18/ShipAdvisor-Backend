@@ -12,9 +12,15 @@ namespace ShipAdvisor.Core.Entity
         
         public string OrderStatus { get; set; }
 
-        public List<Customer> Customers { get; set; }
+        public Customer Customer { get; set; }
+        
+        public Customer Company { get; set; }
+        
+        public int BidCount { get; set; }
         
         public List<PackageList> PackageLists { get; set; }
+        
+        public List<Bid> Bids { get; set; }
         
         public DateTime OrderCreated { get; set; }
         

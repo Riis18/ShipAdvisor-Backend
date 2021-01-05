@@ -25,7 +25,6 @@ namespace ShipAdvisor_Api.Controllers
             try
             {
                 ShipmentOrder order = orderDto;
-                Console.WriteLine(order.Customers);
                 var shipment = _shipmentService.CreateOrder(order);
 
                 return shipment;
@@ -43,6 +42,59 @@ namespace ShipAdvisor_Api.Controllers
             try
             {
                 return _shipmentService.GetAllCustomersOrder(id);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        
+        [HttpGet("order/{id}")]
+        public ActionResult<ShipmentOrder> GetOrderById(int id)
+        {
+            try
+            {
+                return _shipmentService.GetOrderById(id);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        
+        [HttpGet("{id}/queries")]
+        public ActionResult<IEnumerable<ShipmentOrder>> GetAllCustomerQueries(string id)
+        {
+            try
+            {
+                return _shipmentService.GetAllCustomerQueries(id);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        
+        [HttpGet("queries/{id}")]
+        public ActionResult<ShipmentOrder> GetOrderQuerieById(int id)
+        {
+            try
+            {
+                return _shipmentService.GetOrderQuerieById(id);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        
+        [HttpPost("createBid")]
+        public ActionResult<Bid> CreateBid([FromBody] Bid bid)
+        {
+            try
+            {
+                return _shipmentService.CreateBid(bid);
+
             }
             catch (Exception e)
             {
