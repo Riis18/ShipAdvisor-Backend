@@ -18,7 +18,7 @@ namespace ShipAdvisor.Infrastructure.Data.Repositories
         public ShipmentOrder CreateOrder(ShipmentOrder order)
         {
             order.OrderCreated = DateTime.Now;
-            order.OrderStatus = "Open";
+            order.OrderStatus = "Pending";
             order.BiddingStatus = "Open";
             order.BidCount = 0;
             _ctx.ShipmentOrders.Attach(order).State = EntityState.Added;
@@ -33,6 +33,7 @@ namespace ShipAdvisor.Infrastructure.Data.Repositories
             return _ctx.ShipmentOrders
                 .Include(p => p.PackageLists)
                 .Where(s => s.Customer.UId == id)
+                .Where(s => s.OrderStatus == "Pending")
                 .OrderByDescending(s => s.OrderCreated);
         }
 

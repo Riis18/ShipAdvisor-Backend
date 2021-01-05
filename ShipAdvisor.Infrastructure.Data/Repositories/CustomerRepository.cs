@@ -40,6 +40,31 @@ namespace ShipAdvisor.Infrastructure.Data.Repositories
             var customerSaved = _ctx.Customers.Add(customer).Entity;
             _ctx.SaveChanges();
         }
-        
+
+        public IEnumerable<Bid> GetBidsByOrderId(int id)
+        {
+            return _ctx.Bids
+                .Include(c => c.Company)
+                .Where(s => s.ShipmentOrder.Id == id);
+        }
+
+        public void UpdateCustShipment(ShipmentOrder order, List<Bid> bids, Bid bid)
+        {
+
+            bids.ForEach(b =>
+            {
+                if (b.Id == bid.Id) return;
+                Console.WriteLine(b.Id + "  " + bid.Id);
+                _ctx.Bids.Remove(b);
+            });
+            Console.WriteLine("not yet");
+            Console.WriteLine("Yes");
+            var shipmentOrder = _ctx.ShipmentOrders.FirstOrDefault(s => s.Id == order.Id);
+            shipmentOrder.BiddingStatus = "Closed";
+            shipmentOrder.OrderStatus = "Active";
+            _ctx.ShipmentOrders.Update(shipmentOrder);
+            _ctx.SaveChanges();
+
+        }
     }
 }

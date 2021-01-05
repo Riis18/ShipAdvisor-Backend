@@ -12,5 +12,9 @@ namespace ShipAdvisor.Core.DomainService
         Customer ReadCustomerByUid(string id);
 
         Task CreateCustomer(Customer customer, string password);
+        
+        IEnumerable<Bid> GetBidsByOrderId(int id);
+        
+        void UpdateCustShipment(ShipmentOrder order, List<Bid> bids, Bid bid);
     }
 }

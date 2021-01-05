@@ -15,7 +15,7 @@ namespace ShipAdvisor.Core.Entity
         public Customer Customer { get; set; }
         
         public Customer Company { get; set; }
-        
+
         public int BidCount { get; set; }
         
         public List<PackageList> PackageLists { get; set; }
