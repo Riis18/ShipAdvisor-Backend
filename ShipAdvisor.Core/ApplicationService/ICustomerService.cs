@@ -11,5 +11,9 @@ namespace ShipAdvisor.Core.ApplicationService
         Task CreateCustomer(Customer customer, string password);
 
         Customer GetCustomerByUid(string id);
+        
+        List<Bid> GetBidsByOrderId(int id);
+
+        void UpdateCustShipment(ShipmentOrder order, List<Bid> bids, Bid bid);
     }
 }

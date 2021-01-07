@@ -10,8 +10,7 @@ namespace ShipAdvisor.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-            modelBuilder.Entity<Customer>().HasKey(c => c.UId);
+            
 
             modelBuilder.Entity<ShipmentOrder>().HasKey(s => s.Id);
 

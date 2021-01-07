@@ -64,7 +64,7 @@ namespace ShipAdvisor.Infrastructure.Data
             {
                 Id = 1,
                 BiddingStatus = "Open",
-                OrderStatus = "Open",
+                OrderStatus = "Pending",
                 Customer = customer1,
                 Company = null,
                 PackageLists = packageList,
@@ -90,7 +90,7 @@ namespace ShipAdvisor.Infrastructure.Data
             {
                 Id = 2,
                 BiddingStatus = "Closed",
-                OrderStatus = "Open",
+                OrderStatus = "Pending",
                 Customer = customer2,
                 Company = null,
                 PackageLists = packageList,
@@ -115,7 +115,7 @@ namespace ShipAdvisor.Infrastructure.Data
             {
                 Id = 3,
                 BiddingStatus = "Open",
-                OrderStatus = "Open",
+                OrderStatus = "Pending",
                 Customer = customer1,
                 Company = null,
                 PackageLists = packageList,

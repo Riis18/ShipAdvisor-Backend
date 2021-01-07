@@ -15,5 +15,6 @@ namespace ShipAdvisor.Core.ApplicationService
         ShipmentOrder GetOrderById(int id);
 
         Bid CreateBid(Bid bid);
+        
     }
 }
