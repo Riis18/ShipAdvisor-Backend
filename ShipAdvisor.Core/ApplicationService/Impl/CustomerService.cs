@@ -29,5 +29,15 @@ namespace ShipAdvisor.Core.ApplicationService.Impl
         {
             return _customerRepo.ReadCustomerByUid(id);
         }
+
+        public List<Bid> GetBidsByOrderId(int id)
+        {
+            return _customerRepo.GetBidsByOrderId(id).ToList();
+        }
+
+        public void UpdateCustShipment(ShipmentOrder order, List<Bid> bids, Bid bid)
+        {
+            _customerRepo.UpdateCustShipment(order, bids, bid);
+        }
     }
 }
