@@ -14,11 +14,6 @@ namespace ShipAdvisor.Core.ApplicationService.Impl
         {
             _customerRepo = customerRepo;
         }
-        
-        public List<Customer> GetAllCustomers()
-        {
-            return _customerRepo.GetAllCustomers().ToList();
-        }
 
         public Task CreateCustomer(Customer customer, string password)
         {
