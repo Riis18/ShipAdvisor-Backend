@@ -1,12 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using ShipAdvisor.Core.ApplicationService;
 using ShipAdvisor.Core.Entity;
 using ShipAdvisor_Api.Dtos;
@@ -19,15 +13,22 @@ namespace ShipAdvisor_Api.Controllers
     {
 
         private readonly ICustomerService _customerService;
-        private readonly ILoginService _loginService;
 
-        public LoginController(ICustomerService customerService,
-            ILoginService loginService)
+        /// <summary>
+        /// Initiates the LoginController
+        /// </summary>
+        /// <param name="customerService">Contains the service logic</param>
+        public LoginController(ICustomerService customerService)
         {
-            _customerService = customerService;
-            _loginService = loginService;
+            _customerService = customerService; ;
         }
 
+        /// <summary>
+        /// Uses the Dto to map information from the request body
+        /// and after that is sends it to the ICustomerService
+        /// </summary>
+        /// <param name="customerData">Contains the data for customer entity and password</param>
+        /// <returns>Ok code if succesful else a badrequest code with message</returns>
         [HttpPost("createCustomer")]
         public async Task<ActionResult> CreateCustomer([FromBody] UserDto customerData)
         {
@@ -45,6 +46,11 @@ namespace ShipAdvisor_Api.Controllers
             }
         }
         
+        /// <summary>
+        /// calls upon the ICustomerService to retrieve a user by id
+        /// </summary>
+        /// <param name="id">id of user</param>
+        /// <returns>the customer entity</returns>
         [HttpGet("{id}")]
         public ActionResult<Customer> GetUserSignedIn(string id)
         {

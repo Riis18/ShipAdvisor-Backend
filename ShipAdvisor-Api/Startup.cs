@@ -1,19 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using ShipAdvisor.Core.ApplicationService;
 using ShipAdvisor.Core.ApplicationService.Impl;
 using ShipAdvisor.Core.DomainService;
@@ -45,8 +37,6 @@ namespace ShipAdvisor_Api
 
             services.AddScoped<IShipmentService, ShipmentService>();
             services.AddScoped<IShipmentRepository, ShipmentRepository>();
-
-            services.AddScoped<ILoginService, LoginService>();
             
             FirebaseApp.Create(new AppOptions()
             {

@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,13 +19,7 @@ namespace ShipAdvisor.Infrastructure.Data.Repositories
             _ctx = ctx;
             _firebase = new FirebaseManager();
         }
-        
 
-        public IEnumerable<Customer> GetAllCustomers()
-        {
-            return _ctx.Customers;
-        }
-        
         public Customer ReadCustomerByUid(string id)
         {
             return _ctx.Customers.FirstOrDefault(c => c.UId == id);
